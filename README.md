@@ -2,7 +2,7 @@
 
 Note앱 CRUD
 
-## jason-server를 이용한 REST API
+## json-server를 이용한 REST API
 
 REST API 를 구축해주는 라이브러리
 
