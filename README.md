@@ -6,13 +6,13 @@ Note앱 CRUD
 
 REST API 를 구축해주는 라이브러리
 
-### `npm install json-server`
+### `npm install -g json-server`
 
 ### `fetch() 함수로 원격 API 호출하기`
 
 https://www.daleseo.com/js-window-fetch/
 
-### `npm react-router-dom`
+### `npm i react-router-dom`
 
 v6  
 SPA에서 화면 전환을 위해 사용하는 모듈
