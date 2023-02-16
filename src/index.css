@@ -1,13 +1,110 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul {
+  list-style: none;
+}
+body {
+  background-color: #eee;
+}
+button {
+  padding: 4px 12px;
+  cursor: pointer;
+  margin: 0 6px;
+}
+.App {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px 16px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 26px;
+}
+
+.note_list {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 16px;
+}
+.note {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.05);
+}
+.note h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.note p {
+  font-size: 14px;
+  margin-bottom: 10px;
+  min-height: 140px;
+}
+.note div {
+  display: flex;
+  font-size: 13px;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+}
+.note div span {
+  margin-right: auto;
+}
+.note div button {
+  padding: 6px 12px;
+  font-size: 13px;
+  border: none;
+}
+.note div button {
+  margin: 0 2px;
+}
+
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+}
+.container h2 {
+  font-weight: normal;
+  margin-bottom: 20px;
+  text-align: center;
+}
+form div {
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+form div label {
+  display: block;
+  margin-bottom: 10px;
+}
+form div input,
+form div textarea {
+  width: 100%;
+  padding: 12px;
+}
+
+@media (min-width: 576px) {
+  .note_list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (min-width: 768px) {
+  .note_list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
 }
