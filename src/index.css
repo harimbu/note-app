@@ -58,16 +58,17 @@ header {
   justify-content: center;
   color: #666;
 }
-.note div span {
+.note div span:first-child {
   margin-right: auto;
 }
-.note div button {
-  padding: 6px 12px;
-  font-size: 13px;
-  border: none;
+.note div a {
+  display: block;
+  padding: 6px;
+  font-size: 20px;
 }
-.note div button {
-  margin: 0 2px;
+
+.note div a:hover {
+  color: #000;
 }
 
 .container {

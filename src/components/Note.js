@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { MdDelete, MdEdit } from 'react-icons/md'
 
 export default function Note({ note }) {
   const [cat, SetCat] = useState(false)
@@ -27,9 +28,11 @@ export default function Note({ note }) {
       <div>
         <span>{note.date}</span>
         <Link to={`/edit`} state={note}>
-          <button>수정</button>
+          <MdEdit />
         </Link>
-        <button onClick={onDelete}>삭제</button>
+        <a href="#x">
+          <MdDelete onClick={onDelete} />
+        </a>
       </div>
     </li>
   )
