@@ -1,24 +1,17 @@
-import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { MdDelete, MdEdit } from 'react-icons/md'
+import moment from 'moment'
+import 'moment/locale/ko'
+import { db } from '../firebase'
+import { doc, deleteDoc } from 'firebase/firestore'
 
 export default function Note({ note }) {
-  const [cat, SetCat] = useState(false)
+  const date = moment(note.date.toDate()).format('YYYY-MM-D, a h:mm')
 
-  function onDelete() {
+  async function onDelete() {
     if (window.confirm('정말 삭세하시겠습니까?')) {
-      fetch(`http://localhost:3001/notes/${note.id}`, {
-        method: 'DELETE',
-      }).then(res => {
-        if (res.ok) {
-          SetCat(true)
-        }
-      })
+      await deleteDoc(doc(db, 'notes', note.id))
     }
-  }
-
-  if (cat === true) {
-    return null
   }
 
   return (
@@ -26,7 +19,7 @@ export default function Note({ note }) {
       <h3>{note.title}</h3>
       <p>{note.detail}</p>
       <div>
-        <span>{note.date}</span>
+        <span>{date}</span>
         <Link to={`/edit`} state={note}>
           <MdEdit />
         </Link>
